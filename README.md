@@ -18,6 +18,9 @@ Usage
     
     $ ./mqtt_router office_co2 7seg0003 'co2\":(.+),' 'segd#{sprintf("%04d",md[1].to_i)}'
     
+Dataflow
+----
+![img01.png](img01.png)
 
 Copyright and license
 ----
