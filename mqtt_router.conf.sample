@@ -1,0 +1,30 @@
+;
+; mqtt_router.conf - for supervisord configuration file
+;
+; install
+;     $ pwd
+;     $ sudo cp mqtt_router.conf.sample /etc/supervisor/conf.d/mqtt_router.conf
+;     $ sudo vi /etc/supervisor/conf.d/mqtt_router.conf
+;       (fix path, etc...)
+;     $ sudo supervisorctl reread
+;     $ sudo supervisorctl add mqtt_router
+;     $ sudo supervisorctl status
+;     mqtt_router            RUNNING    pid 8192, uptime 0:00:30
+;
+; see also
+;     Supervisor: A Process Control System
+;     http://supervisord.org/
+;
+[program:mqtt_router]
+command         = /usr/bin/ruby /home/pi/work/mqtt_router/mqtt_router.rb
+numprocs        = 1
+autostart       = true
+autorestart     = true
+user            = pi
+environment     = HOME=/home/pi/
+redirect_stderr = true
+stdout_logfile  = /home/pi/work/mqtt_router/log.txt
+startsecs               = 3
+startretries            = 10
+stdout_logfile_maxbytes = 10MB
+stdout_logfile_backups  = 1

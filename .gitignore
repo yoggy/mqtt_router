@@ -1,2 +1,5 @@
 *.swp
 mqtt_router_config.yaml
+*.yaml
+*.conf
+log*
