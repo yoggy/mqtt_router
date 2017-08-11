@@ -21,7 +21,7 @@ Usage
         mqtt_publish_topic: publish_topic
         mqtt_publish_format: segd#{sprintf("%04d",md[1].to_i)}
     
-    $ ./mqtt_router config.yaml'
+    $ ./mqtt_router config.yaml
     
 Dataflow
 ----
